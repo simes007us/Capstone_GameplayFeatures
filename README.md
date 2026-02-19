@@ -1,47 +1,44 @@
-# Capstone_GameplayFeatures
-Capstone Project Videogame Gameplay Features
+### Capstone_GameplayFeatures
 
-The question for my Capstone is as followed: 
+Simon Anderson
 
-What combinations of activities in the game Palia leads to the Best Long Term retention?
+#### Executive summary
 
-`
+Objective: Identify the specific in-game mechanics that drive that retention.
 
-To accomplish this goal I will be using the large amount of data that our game tracks through it's robust telemetry system which includes:
+What We Did: We processed raw player telemetry data and trained a Random Forest machine learning model to uncover the hidden patterns in player behavior.
 
-What activities a player participated in and how long it took them to complete the activity. 
+What We Found: * Our initial model was highly accurate (98%) but relied too heavily on "Total Time Played." Because simply telling players to "play longer" isn't a usable design strategy, we removed time-based metrics to find the root cause of that engagement.
 
-When they login in or out.
+By forcing the model to look only at actionable gameplay, we discovered that Quest Starts and In-Game Economy (Gold/Items) are the true drivers of player retention.
 
-What resources they collected while doing the activities. 
+#### Rationale
+Finding out what actually drives retention is incredibly import for generating new content in the game making the wrong content can adversely affect game health
 
-Whom they did the activities with.
+#### Research Question
+The question I am trying to answer is what parts of the game actually boost retention. 
 
-Did they build any friendships with the in game Non Player Characters.
+#### Data Sources
+We processed raw player telemetry data from the game collected over the last few years of the games life
 
-How long they played that session and day.
+#### Methodology
+What methods are you using to answer the question?
+I trained a Random Forest machine learning model to help find the features that are best suited to driving retention.
 
-What they bought in the premium shop.
 
-If they spoke to another player or not.
+#### Results
+Recommendation: Game design and product teams should shift focus away from trying to artificially inflate session lengths. Instead, prioritize optimizing the early-game funnel to remove friction and encourage new players to start their first few quests and interact with the economy as quickly as possible.
 
-Are they in a community/guild or not.
+#### Next steps
+What suggestions do you have for next steps?
+The next steps are to include more features or columns of data. It currently has about 20 but could be expanded to capture many more aspects of the game. 
+After that I would recommend more tuning of the model to see if it can be improved. 
 
-Do they have any friends in the game.
+#### Outline of project
 
-Did they use the party feature and how many times and with how many people.
+https://github.com/simes007us/Capstone_GameplayFeatures/blob/main/Capstone.ipynb
 
-`
+##### Contact and Further Information
 
-The techniques I will be applying are as followed. 
-
-This data will be have to be fed into a ML pipeline which will feature numerous different types of feature enginering such as: 
-OneHotEncoder, StandardScaler, Polynomial Features, Dimensionality Reduction,OrdinalEncoder,Normalizing and numerous different models. I will have to figure out what the best type of model to use is going to be. I plan on starting with Logistic Regression, Decision Trees, KNN and SVM running then through a training gym once I get all the features enginnered. 
-
-The End Result
-
-The end result will likely be a decision tree that will show the primary drivers of retention based on the fitted model and the data that is given to it. The tree will explicitly rank the activities telling us which ones actively keeps players coming back.
-
-Why is this question important?
-
-This question is important in Massively Multiplayer Online Video Games such as Palia because there are numerous activities available to the player at one time. It makes logical sense that some activities that retain players are better than others. Finding out what retains players can give us a much better understanding of what type of content to create in the future. We as a company should not continue to work on features that doesn't help retain players at a decent rate. A decision tree will be able to answer these questions and help us move forward.
+Simon Anderson
+simes007us@gmail.com
